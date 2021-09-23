@@ -73,7 +73,7 @@ else
 
     tar -xf node-v10.16.3-linux-x64.tar.xz
     sudo mv node-v10.16.3-linux-x64 /opt/nodejs
-    echo "NODEJS_HOME=/opt/nodejs" >> $HOME/.bash_profile
+    echo "NODEJS_HOME=/opt/nodejs" >> $HOME/.bashrc
     echo "PATH=\$NODEJS_HOME/bin\${PATH:+:\${PATH}}" >> $HOME/.bashrc
     echo "export PATH"  >> $HOME/.bashrc
     source $HOME/.bashrc
