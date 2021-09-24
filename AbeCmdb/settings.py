@@ -79,6 +79,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql', #数据库引擎
+#        'NAME': 'polls',  # 数据库名称
+#        'USER': 'root',   # 数据库用户名
+#        'PASSWORD':'xxx',   # 密码
+#        'HOST': 'xx.xx.xx.xx',  # 主机
+#        'PORT': '3306',   # 数据库端口
+#        'CHARSET':'utf8mb4',  #字符集编码
+#    }
+#}
 
 
 # Password validation
@@ -103,18 +114,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'   # 语言代码 英文: en-us 中文: zh-hans
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'  # 时区
 
-USE_I18N = True
+USE_I18N = True   # 国际化
 
-USE_L10N = True
+USE_L10N = True   # 本地化
 
-USE_TZ = True
+USE_TZ = True   # 使用时区
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_URL = '/media/'
