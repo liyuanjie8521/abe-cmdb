@@ -19,6 +19,7 @@ from web.forms.account import RegisterModelForm,LoginForm
 from django.conf import settings
 from django.http import JsonResponse
 from web import models
+from django.contrib.auth.models import User, Group
 
 import uuid
 import datetime
@@ -68,3 +69,9 @@ def login(request):
 def logout(request):
     request.session.flush()
     return redirect('/web/index')
+
+def add_ldap_users(request):
+    return render("account/list_users.html", request, {})
+
+def sync_ldap_users_groups(request):
+    return render("account/list_users.html", request, {})

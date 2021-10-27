@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+     'django_ldap',
     'web.apps.WebConfig',
 ]
 
@@ -134,3 +135,20 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
+
+# 用户登录认证
+AUTHENTICATION_BACKENDS = [
+    #'django_ldap.backend.LDAPBackend',
+    #'web.core.auth.backend.LdapBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+# LDAP settings
+LDAP_URL = "ldap://ldapserver:port"
+BIND_USER = "CN=adreader,OU=xxx,OU=xxx,DC=xxx,DC=xxxx"
+BIND_PASSWORD = "*****"
+SEARCH_DN = "ou=xxxx,dc=xxxx,dc=xxxx"
+
+
+LANGUAGE_COOKIE_NAME = 'django_language'
+
+DEFAULT_CHARSET='utf-8'
