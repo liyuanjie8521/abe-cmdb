@@ -20,9 +20,11 @@ cryptography==3.4.6
 decorator==4.4.2
 defusedxml==0.7.1
 Django==3.1
+django-auth-ldap==3.0.0
 django-ldap==0.0.8
 elasticsearch==7.12.0
 entrypoints==0.3
+fdfs-client-py3==1.0.0
 flake8==3.8.4
 humanize==3.3.0
 idna==2.10
@@ -80,7 +82,7 @@ prompt-toolkit==2.0.10
 psutil==5.8.0
 psycopg2==2.7.7
 ptyprocess==0.7.0
-py==1.10.0
+py==1.11.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycodestyle==2.6.0
@@ -90,12 +92,14 @@ pyflakes==2.2.0
 Pygments==2.8.1
 pylint==2.7.2
 pyparsing==2.4.7
+pyproject-toml==0.0.11
 pyrsistent==0.17.3
 pytest==6.2.5
 python-dateutil==2.8.1
 python-jenkins==1.7.0
 python-jsonrpc-server==0.4.0
 python-language-server==0.36.2
+python-ldap==3.4.0
 pytz==2021.1
 PyYAML==5.4.1
 pyzmq==22.0.3
