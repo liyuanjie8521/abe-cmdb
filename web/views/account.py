@@ -19,6 +19,9 @@ from web.forms.account import RegisterModelForm,LoginForm
 from django.conf import settings
 from django.http import JsonResponse
 from web import models
+from django.contrib.auth.models import User, Group
+from django.contrib.auth.views import LoginView
+from django.contrib.auth import login as auth_login
 
 import uuid
 import datetime
@@ -41,9 +44,19 @@ def register(request):
         return JsonResponse({'status': True,'data': '/web/login/'})
     return JsonResponse({'status': False,'error': form.errors})
 
+class Login(LoginView):
+    template_name = 'login.html'
+    def form_valid(self,form):
+        auth_login(self.request, form.get_user())
+        return super(Login, self).form_valid(form)
 
+    def get_context_data(self,**kwargs):
+        context = super(Login,self).get_context_data(**kwargs)
+        return context
+
+"""
 def login(request):
-    """ 用户名和密码登录 """
+    #  用户名和密码登录
     if request.method == 'GET':
         form = LoginForm(request)
         return render(request,'login.html',{'form': form})
@@ -63,7 +76,7 @@ def login(request):
             return redirect('/web/index')
         form.add_error('username','用户名或密码错误')
     return render(request,'login.html',{'form': form})
-
+"""
 
 def logout(request):
     request.session.flush()
