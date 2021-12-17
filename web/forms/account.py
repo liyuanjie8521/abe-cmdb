@@ -48,8 +48,8 @@ class RegisterModelForm(BootStrapForm,forms.ModelForm):
 
         exists = models.UserInfo.objects.filter(username=username).exists()
         if exists:
-            raise ValidationError('用户名已存在')
-            #self.add_error('username',"用户名已存在")
+            raise ValidationError('用户已存在')
+            #self.add_error('username',"用户已存在")
 
         return username
 
@@ -76,7 +76,7 @@ class RegisterModelForm(BootStrapForm,forms.ModelForm):
         return confirm_pwd
 
 class LoginForm(BootStrapForm,forms.Form):
-    username = forms.CharField(label='用户名或邮箱')
+    username = forms.CharField(label='用户或邮箱')
     password = forms.CharField(label='密码',widget=forms.PasswordInput(render_value=True))
 
     def __init__(self,request,*args,**kwargs):
